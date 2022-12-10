@@ -1,0 +1,15 @@
+# ^ 시작
+# ([ㄱ-ㅎㅏ-ㅣ가-힣]+)
+# $ 끝
+
+# 시작과 끝 사이의 한글이 들어오면
+# profile.php?profile_username=$1 보내버림
+# url은 그대로지만 실제로는 profile.php?profile_username=$1 이 주소로 보내버림
+# $1에는 입력한 한글 값이 들어감.
+# 예) http://localhost/sns/김민철 브라우저에 입력하면
+# 실제로는 http://localhost/sns/profile.php?profile_username=김민철 브라우저에 전송됨.
+# 보낸 값은 echo $_GET['profile_username']; 코드로 사용이 가능함.
+
+RewriteEngine On
+RewriteRule ^([ㄱ-ㅎㅏ-ㅣ가-힣]+)$ profile.php?profile_username=$1
+RewriteRule ^([ㄱ-ㅎㅏ-ㅣ가-힣]+)/$ profile.php?profile_username=$1
