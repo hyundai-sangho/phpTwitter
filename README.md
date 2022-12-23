@@ -1,5 +1,7 @@
 # 유데미 Build a Social Network from Scratch: JavaScript PHP + MySQL
 
+1. <https://youtu.be/AvLABRrJsZo>
+
 ## 설치
 
 1. composer install 실행(vendor 설치)
